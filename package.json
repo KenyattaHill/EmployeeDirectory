@@ -13,7 +13,6 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.1"
   },
-  "homepage":"http://kcjhill1234.github.io/EmployeeDirectory/",
   "scripts": {
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build",
