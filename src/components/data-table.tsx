@@ -3,8 +3,13 @@ import { Table } from 'semantic-ui-react';
 import TableHeader from './table-header';
 import TableBody from './table-body';
 import { useEmployees } from '../use-employee';
+import { Header } from '../types';
 
-export default function DataTable({ headers }) {
+type Props = {
+  headers: Header[]
+}
+
+export default function DataTable({ headers }: Props) {
   const { state } = useEmployees();
   const { filteredEmployees } = state;
   return (
