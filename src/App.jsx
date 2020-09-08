@@ -1,28 +1,31 @@
-import React from "react";
-import Header from "./components/Header";
-import DataTable from "./components/DataTable";
-import EmployeeSearch from "./components/Employee-Search";
-import { useEmployees } from "./use-employees";
+import React from 'react';
+import Header from './components/header';
+import DataTable from './components/data-table';
+import EmployeeSearch from './components/employee-search';
+import { useEmployees } from './use-employee';
+import { Loader } from 'semantic-ui-react';
 
 function App() {
   const { state } = useEmployees();
-  const { filteredEmployees } = state;
-  const headers = [
-    { display: "First Name", name: "first" },
-    { display: "Last Name", name: "last" },
-    { display: "Email", name: "email" },
-    { display: "Phone", name: "phone" },
-    { display: "Location", name: "location" },
-  ];
+  const { loading } = state;
   return (
     <>
       <Header />
-      <div className="App">
+      <div className='App'>
         <EmployeeSearch />
-        {filteredEmployees.length ? (
-          <DataTable data={filteredEmployees} headers={headers} />
+        {loading ? (
+          <Loader active />
         ) : (
-          <div>No Data...</div>
+          <DataTable
+            headers={[
+              { display: '', name: 'picture' },
+              { display: 'First Name', name: 'first' },
+              { display: 'Last Name', name: 'last' },
+              { display: 'Email', name: 'email' },
+              { display: 'Phone', name: 'phone' },
+              { display: 'Location', name: 'location' },
+            ]}
+          />
         )}
       </div>
     </>
