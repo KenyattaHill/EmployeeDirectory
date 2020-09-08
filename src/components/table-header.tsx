@@ -1,11 +1,11 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
-import { useEmployees } from '../use-employee';
-import { Actions, Header } from '../types'
+import { useEmployees } from '../hooks/use-employee';
+import { Actions, Header } from '../types';
 
 type Props = {
-  headers: Header[]
-}
+  headers: Header[];
+};
 export default function TableHeader({ headers }: Props) {
   const { state, dispatch } = useEmployees();
   const { column, direction } = state;

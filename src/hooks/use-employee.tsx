@@ -7,7 +7,7 @@ import React, {
   Dispatch,
 } from 'react';
 import sortBy from 'lodash.sortby';
-import { Employee, State, Actions, Action } from './types';
+import { Employee, State, Actions, Action } from '../types';
 
 const initialState: State = {
   filteredEmployees: [],

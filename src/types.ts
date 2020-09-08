@@ -9,7 +9,6 @@ export type Employee = {
   picture: string;
 };
 
-
 export type State = {
   filteredEmployees: Employee[];
   employees: Employee[];

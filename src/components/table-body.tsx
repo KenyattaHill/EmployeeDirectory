@@ -3,8 +3,8 @@ import { Table, Image } from 'semantic-ui-react';
 import { Employee } from '../types';
 
 type Props = {
-  data: Employee[]
-}
+  data: Employee[];
+};
 
 export default function TableBody({ data }: Props) {
   const rows = data.map(
